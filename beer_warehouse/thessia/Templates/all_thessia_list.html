@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container pt-3">
+    <hr>
+    <div class="row" align="center">
+       {% for cuento in cuentos %}
+          <div class="col-xl-4" padding="100px">
+              <div class="card bg-dark text-white" id="tarjeta" style="width:300px" align="left">
+                <img src="{{ cuento.image.url }}" class="card-img" height="265px"  alt="...">
+                <div class="card-img-overlay txt-color">
+                    <h5 class="card-title"><a href="{% url 'thessia-detail-view' cuento.pk %}"><b>{{ cuento }}</b></a></h5>
+                    <p class="card-text"><b>{{ cuento.description }}</b></p>
+                <p class="card-text">{{ cuento.author }}</p>
+                <form action="{% url 'thessia-detail-view' cuento.pk %}">
+                    <button id="lectura" type="submit" class="btn btn-dark"><b>Leer</b></button>
+                </form>
+                </div>
+              </div>
+              <br>
+        <br>
+          </div>
+       {% endfor %}
+    </div>
+</div>
+{% endblock %}

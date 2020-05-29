@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block background %}{% static '/img/myAvatar.png' %}{% endblock %}
+{% block content %}
+
+<div class="container pt-6">
+    <h3>Las historias más destacadas</h3>
+    <div class="row" align="center" padding="20px">
+       {% for cuento in cuentos %}
+          <div class="col-sm-6">
+              <hr>
+              <div class="card bg-dark text-white" id="tarjeta" style="width:300px" align="left">
+                <img src="{{ cuento.image.url }}" class="card-img" height="260px" alt="...">
+                <div class="card-img-overlay txt-color">
+                    <h5 class="card-title"><a href="{% url 'thessia-detail-view' cuento.pk %}"><b>{{ cuento }}</b></a></h5>
+                    <p class="card-text"><b>{{ cuento.description }}</b></p>
+                <p class="card-text">{{ cuento.author }}</p>
+                <form action="{% url 'thessia-detail-view' cuento.pk %}">
+                    <button id="lectura" type="submit" class="btn btn-dark"><b>Leer</b></button>
+                </form>
+                </div>
+              </div>
+          </div>
+       {% endfor %}
+    </div>
+</div>
+<hr>
+<div class="container pt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-3" align="left">
+            <h2>Sobre mí</h2>
+            <p align="justify" class="shadow-txt">Give her hell from us, Peeves.' And Peeves, whom Harry had never seen take an order from a student before, swept his belled hat from his head and sprang to a salute as Fred and George wheeled about to tumultuous applause from the students below and sped out of the open front doors into the glorious sunset." </p>
+        </div>
+        <div class="col-xl-3" align="left">
+            <img src="{% static 'img/nina.png' %}"  class="shadow-img" width="220px" height="220px">
+        </div>
+         <div class="col-xl-4" align="justify">
+            <h2>Sobre esta página web</h2>
+            <p align="justify" class="shadow-txt">Give her hell from us, Peeves.' And Peeves, whom Harry had never seen take an order from a student before, swept his belled hat from his head and sprang to a salute as Fred and George wheeled about to tumultuous applause from the students below and sped out of the open front doors into the glorious sunset." </p>
+            <p class="shadow-txt">We’ve all got both light and dark inside us. What matters is the part we choose to act on. That’s who we really are.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top backgrnd-col">
+  <a class="navbar-brand " href="{% url 'thessia-list-view' %}"><img src="{% static 'img/logo4.png' %}" width="60px" height="50px"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link col-text" href="{% url 'all-thessia-list-view' %}"><h5>Cuentos</h5></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link col-text" href="{% url 'thessia-interactive-game-view' %}" ><h5>Juego interactivo</h5></a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,56 @@
+{% load static %}
+<html>
+<head>
+    <!-- Ajustamos el contenido de nuestra página web a cualquier resolución de pantalla -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/short-cut/favicon.png' %}" />
+    <meta name="theme-color" content="#ffffff">
+    <title> | Juego interactivo </title>
+</head>
+<body>
+{% include 'navbar.html' %}
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-xl-6 mx-auto" align="center">
+        <div class="container pt-5 mb-3" id="tesoros">
+            <div class="card" id="bienvenidx">
+                <h2 class="card-header" align="center" id="tesoroTitle"><b>La Isla del Tesoro</b></h2>
+                <div class="card-body" align="center">
+                    <h5 class="card-title" align="center">Bienvenidx a Libertalia</h5>
+                    <p class="card-text" align="justify">Estás a punto de embarcarte en una aventura sin igual. Te encuentras en una isla desierta. Tienes un mapa que señala a un barco, el cual te llevará a la isla de Libertalia. Para poder llegar tendrás que atravesar la isla, pero no será una tarea fácil, pues ahí una serie de pruebas que deberás superar. Si estás preparadx, adelante </p>
+                    <div class="container pt-6" align="center" id="map_image">
+                        <img src="{% static 'img/map.png' %}" width="400px" height="200px" align="center">
+                    </div>
+                    <br>
+                    <br>
+                    <a href="{% url 'thessia-first-test-view' %}" class="btn btn-primary" id="tarjeta">Empezar</a>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center">
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-12">
+        <p>Copyright © MyWebsite. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Cargamos los archivos estáticos que dan formato al contenido de nuestra página web -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'node_modules/popper.js/dist/popper.min.js' %}"></script>
+    <link href="{% static 'css/style_body_interactive.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_list.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_one_.css' %}" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</body>
+</html>

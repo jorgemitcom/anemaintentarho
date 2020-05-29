@@ -1,0 +1,184 @@
+{% load static %}
+<html>
+<head>
+    <!-- Ajustamos el contenido de nuestra página web a cualquier resolución de pantalla -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Chrome, Safari, IE -->
+    <link rel="shortcut icon" href="{% static 'img/short-cut/favicon.png' %}" />
+    <meta name="theme-color" content="#ffffff">
+    <title> | Ultima prueba </title>
+<body>
+{% include 'navbar.html' %}
+<br>
+<br>
+<br>
+<br>
+{% if mensaje %}
+<div class="row">
+    <div class="col-xl-8 mx-auto" align="center">
+        <div class="container ml-5 mr-5 ml-5 mb-5 pt-3">
+            <div class="alert alert-warning backgrnd-jumbotron" role="alert">
+              <h4 class="alert-heading">PRUEBA 3</h4>
+              <p>Finalmente tras atravesar el amlio templo encontrais lo que parece ser la puerta de salida. Es
+                  similar a la de la entrada, pero esta no tiene ninguna inscripción, no tiene polvo. De hecho, ahora
+                  que os ponéis a pensarlo, todo parecía colocado, como si el templo no estuviera abandonado, como si
+                  alguien estuviera allí.... </p>
+              <hr>
+                <p>¡BUM! Una puerta detrás de vosotros se cierra y tras ella aparece una mujer, y a jurar por su atuendo
+                parecía ser una pirata como Lucian y Cameron. No sois capaces de pronunciar palabra y manteneis la mirada
+                fija en la pirata mientras se posiciona en la puerta, bloqueando vuestra salida
+                </p>
+                <p align="justify">
+                    <font color="black">
+                    - Mujer pirata: Os he estado observando y sé que buscais el barco que os lleve a Libertalia. Habeis
+                    superado las pruebas de esta isla, pero sólo los que de verdad merezcan estar en la isla podrán
+                    cruzar al otro lado. Vosotrxs dos (refiriéndose a Lucian y a Cameron), venid. - Ordenó. Lucian y Cameron
+                    se miraron y, sin rechistar avanzaron hasta su posición. - En tus manos está que podais avanzar.
+                    </font>
+                </p>
+                <p align="center">
+                   ¿Crees que podrás... ?
+                </p>
+                <p align="center">
+                    <button type=submit class="btn btn-outline-info " data-toggle="collapse" href="#multiCollapseExample2"
+                     role="button" aria-expanded="false" aria-controls="multiCollapseExample2"><b>Avanzar</b></button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mr-5 ml-5">
+    <div class="col-xl-6 collapse multi-collapse" id="multiCollapseExample2" align="left">
+           <h4>- Encuentra 3 diferencias físicas en Lucian y Cameron</h4>
+            <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-4 mx-auto pt-3 mb-5 ml-3 collapse multi-collapse" id="multiCollapseExample2" align="left">
+        <div class="container formularioDefiniciones">
+                <img src="{% static 'img/pirataH.png' %}" width="120px" height="170px" align="center">
+                <img src="{% static 'img/pirataM.png' %}" width="190px" height="190px" align="center">
+        </div>
+    </div>
+    <div class="col-xl-4 mx-auto mb-3 collapse multi-collapse" id="multiCollapseExample2" align="left">
+        <div class="container pt-3  backgrnd-jumbotron" align="center">
+            <form class="post-form" method="post">
+                {% csrf_token %}
+                <br>
+                    {{ form.as_p }}
+                <button type=submit class="btn btn-outline-info" name="diferencias"><b>Aceptar</b></button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+------------------------
+<div class="row">
+    <div class="col" align="center">
+        <div class="container ml-5 mr-5 ml-5 mb-5 pt-3">
+            <div class="alert alert-warning backgrnd-jumbotron" role="alert">
+              <h4 class="alert-heading">¿QUÉ ACCIONES SE PUEDEN REALIZAR CON LAS PARTES DEL CUERPO QUE HAS SEÑALADO?</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 class="pt-2" align="center">
+    {{ ultimo }}
+</h2>
+<div class="row">
+    <div class="col-xl-12 mx-auto pt-3" align="center">
+        <div class="container pt-3 backgrnd-jumbotron">
+            <form class="post-form" method="post">
+                {% csrf_token %}
+                <br>
+                    {{ form2 }}
+                <br>
+                <button type=submit class="btn btn-outline-info" name="acciones"><b>Comprobar</b></button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+{% elif not mensaje_final %}
+<div class="row">
+    <div class="col" align="center">
+        <div class="container ml-5 mr-5 ml-5 mb-5 pt-3">
+            <div class="alert alert-warning backgrnd-jumbotron" role="alert">
+              <h4 class="alert-heading">EL FINAL DE LA TRAVESÍA</h4>
+                <p align="left">
+                    --Has probado ser de valía, merecedor/a de viajar hasta Libertalia. Adelante, puedes irte. Lucian y
+                    Cameron se quedan conmigo.-- Sin pensarlo un momento te adelantaste y te enfrentaste a ella.
+                </p>
+                <p align="left">
+                   - No, ellxs también vienen. Y tú podrías venir si quisieras también. Libertalia es para todxs.
+                    Libertalia es un sitio donde todxs podemos sentirnos libres y amarnos y amar a los demás sin barreras.
+                    Aquí solo hay paredes que te encierran, allí todxs seríamos libres, y todo aquel que quiera ir, tiene
+                    su derecho de hacerlo.
+                </p>
+                <button class="btn btn-outline-info " data-toggle="collapse" href="#multiCollapseExample2"
+                     role="button" aria-expanded="false" aria-controls="multiCollapseExample2"><b>Final</b></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-2 mx-auto collapse multi-collapse mb-5" id="multiCollapseExample2" align="right">
+        <div class="container">
+                <img src="{% static 'img/final.jpg' %}" width="300px" height="300px" align="center">
+        </div>
+    </div>
+    <div class="col-xl-4 mx-auto collapse multi-collapse pt-3 mr-5" align="center" id="multiCollapseExample2">
+         <div class="container ml-5 mr-5 ml-5 mb-5">
+            <div class="alert alert-warning backgrnd-jumbotron" role="alert">
+              <h5 class="alert-heading">Y finalmente todos surcaron hacia Libertalia con el deseo de sentirse libres. Y a pesar
+              de ser piratas, encontraron refugio los unxs en los otrxs porque tenían un objetivo común. Poco importaba
+              si eran altxs, bajxs, rubixs, morenxs, chicxs o chicxs. Se respetaban, </h5><h5 class="alert-heading"><b>lo más importante es que eran valiosxs
+                por su forma de ser. </b></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col mx-auto pt-3 mb-5 ml-3" align="center">
+        <div class="container">
+                <img src="{% static 'img/lgtbiq+.png' %}" width="700px" height="500px" align="center">
+        </div>
+    </div>
+</div>
+
+
+{% endif %}
+
+
+<footer class="text-center footer">
+  <div class="container pt-3">
+    <div class="row">
+      <div class="col-xl-12">
+        <p>Copyright © Libertalia. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Cargamos los archivos estáticos que dan formato al contenido de nuestra página web -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'node_modules/popper.js/dist/popper.min.js' %}"></script>
+    <link href="{% static 'css/style_body_interactive.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_one_.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_form.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_first_test.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_second_te.css' %}" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</body>
+</head>
+</html>

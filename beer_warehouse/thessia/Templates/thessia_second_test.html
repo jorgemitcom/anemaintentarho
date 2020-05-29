@@ -1,0 +1,186 @@
+{% load static %}
+<html>
+<head>
+    <!-- Ajustamos el contenido de nuestra página web a cualquier resolución de pantalla -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="{% static 'img/short-cut/favicon.png' %}" />
+    <meta name="theme-color" content="#ffffff">
+    <title> Libertalia | Segunda prueba </title>
+<body>
+{% include 'navbar.html' %}
+<br>
+<br>
+<br>
+<br>
+
+{% if not mensaje %}
+<div class="row">
+    <div class="col-xl-12 mx-auto" align="center">
+        <div class="container ml-5 mr-5 ml-5 mb-3 pt-3">
+            <div class="alert alert-warning backgrnd-jumbotron" role="alert">
+              <h4 class="alert-heading">PRUEBA 2</h4>
+              <p>Sabiais que la isla contenía más pruebas, pero no os esperabais esto. La maleza ocultaba lo que parece
+                  ser un gran templo. En vuestrom no hay constancia de ese templo, pero sí aparece una gran "X" en la
+                  zona en la que os encontrais. ¡Vuestra salida se encuentra precisamente dentro del templo! Pero no
+                  podeis abrir la puerta. </p>
+              <hr>
+                <p class="mb-0">El polvo oculta unas inscripciones. Lo limpiais y encontrais 5  de ellas. Debajo
+                  encontrais una serie de mecanismos que se pueden girar y muestran palabras. Quizás deberiais
+                  intentar hacer que las inscripciones coincidieran con las palabras...
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-4 pt-5">
+        <div class="container mt-5 mr-3 formularioDefiniciones " data-toggle="collapse" href="#multiCollapseExample2"
+                     role="button" aria-expanded="false" aria-controls="multiCollapseExample2" align="center">
+                <img src="{% static 'img/pirataH.png' %}" width="100px" height="150px" align="center">
+                <img src="{% static 'img/pirataM.png' %}" width="150px" height="150px" align="center">
+        </div>
+    </div>
+    <div class="col-xl-4 pt-3" align="center">
+        <div class="container pt-3 formularioDefiniciones backgrnd-jumbotron">
+            <form class="post-form" method="post">
+                {% csrf_token %}
+                <br>
+                    {{ form.as_p }}
+                <button type=submit class="btn btn-outline-info"><b>Comprobar</b></button>
+                <br>
+                <br>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-xl-4" align="center">
+        <div class="container mr-5 mt-5" align="center">
+                <img src="{% static 'img/templo.png' %}" class="formularioDefiniciones" data-toggle="collapse" href="#multiCollapseExample1"
+                     role="button" aria-expanded="false" aria-controls="multiCollapseExample1" width="200px" height="250px">
+        </div>
+    </div>
+</div>
+
+<div class="container mx-auto">
+    <div class="collapse multi-collapse " id="multiCollapseExample1">
+        <div class="alert alert-warning" role="alert">
+            -- Las definiciones están ordenadas de izquierda a derecha, siendo la primera la que se encuentra
+            en el extremo izquierdo, y la última la del extremo derecho --
+        </div>
+    </div>
+</div>
+<div class="container mx-auto">
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="alert alert-warning" role="alert">
+            A simple warning alert—check it out!
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col mb-3 ml-5 header-style" align="center">
+       <hr>
+        <b>¿Qué inscripción coincide con su concepto?</b>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    {% for def in definitions %}
+        <div class="col ml-5 mr-3" align="center">
+           <div class="card">
+            <div class="card-header">Inscripción</div>
+              <div class="card-body" align="justify">
+                <b>
+                {{ def }}
+                </b>
+              </div>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+<br>
+<br>
+ {% else %}
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="container pt-5 ">
+            <div class="card ">
+                <div class="card-body backgrnd-jumbotron">
+                    <p>
+                        ¡Enhorabuena! Habéis logrado adivinar todas las palabras. El muro se abre y lográis avanzar. A
+                        pesar de ser piratas, comprenden que sin tu ayuda no habrian logrado adivinar el acertijo y
+                        juntxs continuais el camino por la isla en dirección al barco.
+                    </p>
+                    <p align="right">
+                       <a class="btn btn-outline-warning" href="{% url 'thessia-third-test-view' %}" role="button">Avanzar</a></button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mx-auto mt-3">
+    <div class="collapse multi-collapse " id="multiCollapseExample3">
+        <div class="alert alert-warning" role="alert">
+            ¡Sígamos adelante, estamos a punto de llegar!
+        </div>
+    </div>
+</div>
+<div class="container mx-auto">
+    <div class="collapse multi-collapse" id="multiCollapseExample4">
+        <div class="alert alert-warning" role="alert">
+            SIC * PARVIS * MAGNA * La grandeza nace de pequeños comienzos
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-6 pt-3">
+        <div class="container mt-5 mr-3 formularioDefiniciones " data-toggle="collapse" href="#multiCollapseExample3"
+                     role="button" aria-expanded="false" aria-controls="multiCollapseExample2" align="center">
+                <img src="{% static 'img/pirataH.png' %}" width="100px" height="150px" align="center">
+                <img src="{% static 'img/pirataM.png' %}" width="150px" height="150px" align="center">
+        </div>
+    </div>
+    <div class="col-xl-6" align="center">
+        <div class="container mr-5 mt-3" align="center">
+                <img src="{% static 'img/templo.png' %}" class="formularioDefiniciones" data-toggle="collapse" href="#multiCollapseExample4"
+                     role="button" aria-expanded="false" aria-controls="multiCollapseExample1" width="200px" height="250px">
+        </div>
+    </div>
+</div>
+
+
+
+{% endif %}
+
+
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p>Copyright © MyWebsite. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+{{ form.palabra1 }}
+
+<!-- Cargamos los archivos estáticos que dan formato al contenido de nuestra página web -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'node_modules/popper.js/dist/popper.min.js' %}"></script>
+    <link href="{% static 'css/style_body_interactive.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_one_.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_form.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_first_test.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_second_te.css' %}" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</body>
+</head>
+</html>

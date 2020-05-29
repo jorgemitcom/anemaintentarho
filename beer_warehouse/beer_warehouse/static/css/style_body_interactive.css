@@ -1,0 +1,42 @@
+body {
+    font-family: 'Pangolin', cursive;
+    background-color: #fffaf5;
+    overflow-x: hidden;
+
+}
+
+.footer {
+    left: 0;
+    bottom: 900px;
+    width: 100%;
+    background-color: #abfffc
+}
+
+.backgrnd-col  {
+    background-color: #abfffc !important;
+    text-shadow: 0.5px 0.5px #000000;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+}
+
+.col-text {
+   color: #f2af58 !important
+}
+
+.backgrnd-jumbotron {
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    background-color: #fffaf5 !important;
+    border-radius: 20px;
+}
+
+.shadow-txt {
+    text-shadow: 0.5px 0.5px #000000;
+}
+
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}

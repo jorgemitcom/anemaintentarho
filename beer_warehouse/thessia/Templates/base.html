@@ -1,0 +1,57 @@
+{% load static %}
+<html>
+<head>
+    <!-- Ajustamos el contenido de nuestra página web a cualquier resolución de pantalla -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Libertalia</title>
+    <link rel="shortcut icon" href="{% static 'img/short-cut/favicon.png' %}" />
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+ <!-- Incluimos el menú superior que hemos creado en el archivo navbar.html -->
+{% include 'navbar.html' %}
+
+<!-- Incluimos un jumbotron para poder presentar nuestra página web -->
+<main role="main" class="container ">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="jumbotron jumbotron-fluid backgrnd-jumbotron" id="jumboInicio">
+      <div class="container">
+        <h1>Bienvenidxs a Libertalia</h1>
+        <p class="lead">"Y recuerda siempre mirar siempre a las estrellas, aunque nuestro pies apenas se puedan levantar
+del suelo."</p>
+          <a class="btn btn-lg btn-primary" id="tarjeta" href="{% url 'thessia-interactive-game-view' %}" role="button">Aventúrate</a>
+      </div>
+    </div>
+</main>
+
+ <!-- Cargamos el contenido de los cuentos que hemos diseñado previamente  -->
+{% block content %}
+{% endblock %}
+<hr>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p>Copyright © MyWebsite. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+ <!-- Cargamos los archivos estáticos que dan formato al contenido de nuestra página web -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'node_modules/bootstrap/bootstrap-4.4.1-dist/js/bootstrap.js' %}"></script>
+    <script src="{% static 'node_modules/popper.js/dist/popper.min.js' %}"></script>
+    <link href="{% static 'css/style_body_interactive.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_list.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style_one_.css' %}" rel="stylesheet"/>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+</body>
+</html>

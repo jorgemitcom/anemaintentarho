@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-sm-6" align="justify">
+      <div class="card">
+        <div class="card-header">Página 1</div>
+          <div class="card-body">
+            <b>
+            {{ cuento.fpage }}
+            </b>
+          </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="card">
+          <div class="card-header">Página 3</div>
+            <div class="card-body">
+              <b>
+                {{ cuento.tpage }}
+              </b>
+            </div>
+        </div>
+      </div>
+    </div>
+      <div class="col-sm-6">
+        <div class="row" >
+          <div class="card">
+            <div class="card-body">
+              <img src="{{ cuento.image.url }}" height="290px" width="510px">
+            </div>
+          </div>
+        </div>
+      <div class="row">
+        <div class="card">
+          <div class="card-header">Página 2</div>
+              <div class="card-body" align="justify">
+                <b>
+                  {{ cuento.spage }}
+                </b>
+              </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
